@@ -1,0 +1,29 @@
+h2 {
+    color: #01324b;
+    font-size: 2rem;
+}
+
+.fruitmand {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.fruitmand header > p {
+    color: orange;
+    font-style: italic;
+}
+
+
+header {
+    padding: 2rem;
+    border: 1px solid #01324b;
+    border-radius: 0.2rem;
+    margin: 2rem;
+    text-align: right;
+}
+
+.fruitmand > button {
+    margin: 2rem;
+    padding: 1rem 0;
+}
