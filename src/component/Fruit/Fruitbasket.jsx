@@ -2,13 +2,16 @@ import React, {useState} from "react";
 import Fruitlist from "./Fruitlist.jsx";
 import './Fruitbasket.css';
 
+
+//Directly destructering instead of using props
 function Fruitbasket({title, description}) {
+
+    //Fruits useState with object data
     const [fruits, setFruits] = useState([
         {emoji: "🍓", title: "Aardbeien", stockNow: 0},
         {emoji: "🍏", title: "Apple", stockNow: 0},
         {emoji: "🍌", title: "Bananen", stockNow: 0},
         {emoji: "🥝", title: "Kiwi's", stockNow: 0},
-        // Add other fruits as needed
     ]);
 
     const minusStock = (index) => {
@@ -61,5 +64,4 @@ function Fruitbasket({title, description}) {
         </>
     );
 }
-
 export default Fruitbasket;
