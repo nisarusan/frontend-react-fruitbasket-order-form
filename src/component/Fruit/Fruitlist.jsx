@@ -14,5 +14,4 @@ function Fruitlist({emoji, title, stockNow, minusStock, increaseStock}) {
         </li>
     );
 }
-
 export default Fruitlist;

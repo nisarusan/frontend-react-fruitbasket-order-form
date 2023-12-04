@@ -8,3 +8,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <App/>
     </React.StrictMode>,
 )
+
+
+//HTTP GET REQUEST
+async function getData() {
+    try {
+        const result = await ('https://test.nl');
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+
+
+

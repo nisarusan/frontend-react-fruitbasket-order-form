@@ -6,7 +6,7 @@ import './Fruitbasket.css';
 //Directly destructering instead of using props
 function Fruitbasket({title, description}) {
 
-    //Fruits useState with object data
+    //Fruits useState with obj  ect data
     const [fruits, setFruits] = useState([
         {emoji: "🍓", title: "Aardbeien", stockNow: 0},
         {emoji: "🍏", title: "Apple", stockNow: 0},

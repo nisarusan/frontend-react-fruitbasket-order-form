@@ -1,10 +1,12 @@
 import React, {useState} from "react";
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import './Form.css';
-function Form({lastName, forName, age, zipCode}) {
+import FormInput from "./FormInput.jsx";
+
+function Form(props) {
 
 
-    const { register, handleSubmit } = useForm();
+    const {register, handleSubmit} = useForm();
     const handleFormSubmit = (data) => {
         console.log(data);
     }
@@ -13,31 +15,37 @@ function Form({lastName, forName, age, zipCode}) {
         <>
             <section className="form">
                 <form action="" onSubmit={handleSubmit(handleFormSubmit)}>
+                    <FormInput
+                        name="Voornaam"
+                        type="text"
+                        register={register}
+                    />
+                    <FormInput
+                        name="Achternaam"
+                        type="text"
+                        register={register}
+                    />
+                    <FormInput
+                        name="Leeftijd"
+                        type="text"
+                        register={register}
+                    />
+                    <FormInput name="bezorgfrequentie" type="text" register={register}>
+                        <select name="bezorgfrequentie" id="category" {...register("bezorgfrequentie")}>
+                            <option value="weekly">Iedere week</option>
+                            <option value="monthly">Ieder maand</option>
+                        </select>
+                        <br/>
+                        <input type="radio" {...register("day")}/><span>Overdag</span>
+                        <input type="radio" {...register("evening")}/><span>'s Avonds</span>
+                    </FormInput>
+                    <FormInput name="Opmerking" type="textarea" register={register}/>
+                    {/*<FormInput>*/}
+                    {/*    <input type="checkbox" id="agree"  {...register("agree")} />*/}
+                    {/*    <label htmlFor="">Ik ga akkoord met de voorwaarden</label>*/}
+                    {/*</FormInput>*/}
 
-                    <label htmlFor="name">{forName}:</label>
-                    <input type="text" {...register("forName")}/>
 
-                    <label htmlFor="Achternaam">{lastName}</label>
-                    <input type="text" {...register("lastName")}/>
-
-                    <label htmlFor="Leeftijd">{age}</label>
-                    <input type="text" {...register("age")}/>
-
-                    <label htmlFor="postcode">{zipCode}</label>
-                    <input type="text" {...register("zipcode")}/>
-
-                    <label htmlFor="bezorg">Bezorgfrequentie</label>
-                    <select name="bezorgfrequentie" id="category">
-                        <option value="weekly" {...register("bezorgfrequentie")}>Iedere week</option>
-                        <option value="monthly" {...register("bezorgfrequentie")}>Ieder maand</option>
-                    </select>
-                    <br />
-                    <input type="radio" {...register("day")}/><span>Overdag</span>
-                    <input type="radio" {...register("evening")}/><span>'s Avonds</span>
-                    <label htmlFor="opmerking">Opmerking</label>
-                    <input type="textarea" {...register("description")}/>
-                    <input type="checkbox"/>
-                    <label htmlFor="">Ik ga akkoord met de voorwaarden</label>
                     <button onClick={handleSubmit}>Verzend</button>
                 </form>
             </section>
